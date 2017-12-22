@@ -1,0 +1,14 @@
+body{
+    
+    font-family: "Century Gothic";
+    font-size: 14px;
+    font-weight: bold; 
+    color:black;
+    background-image: url("Img/img.jpg");
+    
+}
+h1{
+    color:#cc0000;
+    font-size: xx-large;
+    font-weight: bold;
+}

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Student Registration</title>
+        <h:outputStylesheet library="css" name="myStyle.css"/>
+        <h:outputScript library="js" name="myJs.js"/>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <h3>LEXICON </h3>
+            <h:panelGrid columns="1" style="margin: 0 auto;">
+                <h:outputText value="STUDENT REGISTRATION"/>
+            </h:panelGrid>
+            <h:panelGrid columns="2" style="margin: 0 auto;">
+
+                <p:outputLabel for="firstName" value="First Name "/>
+                <p:inputText id="firstName" value='#{studentBean.firstName}'/>
+                <p:outputLabel for="lastName" value="Last Name "/>
+                <p:inputText id="lastName" value='#{studentBean.lastName}'/>
+                <p:outputLabel for="age" value ="Age "/>
+                <p:inputText id="age" value='#{studentBean.age}'/>
+                <p:outputLabel for="subject1" value="First subject "/>
+                <p:inputText id="subject1" value='#{studentBean.subject.subject1}'/>
+                <p:outputLabel for="subject2" value="Second subject "/>
+                <p:inputText id="subject2" value='#{studentBean.subject.subject2}'/>
+                <p:outputLabel for="subject3" value="Third subject "/>
+                <p:inputText id="subject3" value='#{studentBean.subject.subject3}'/>
+                <p:outputLabel for="subject4" value="Fourth subject "/>
+                <p:inputText id="subject4" value='#{studentBean.subject.subject4}'/>
+                <p:outputLabel for="location" value="Campus "/>
+                <p:selectOneMenu id="location" value="#{studentBean.navigationController.location}" required="true">
+                    <f:selectItem itemLabel="location" itemValue=""/>
+                    <f:selectItem itemLabel="Stockholm" itemValue="Stockholm"/>
+                    <f:selectItem itemLabel="Göteborg" itemValue="Göteborg"/>
+                </p:selectOneMenu>
+                <h:panelGroup></h:panelGroup>
+                <p:commandButton value="Submit" action="#{navigationController.navigate()}">
+                </p:commandButton>
+            </h:panelGrid>
+        </h:form>
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+    </h:body>
+</html>
+
